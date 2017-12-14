@@ -5,7 +5,7 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
   #[ $COMPILE_RESULT -ge 2 ] && echo makefile error
 
   if [ "$COMPILE_RESULT" == "1" ]; then
-    $TRAVIS_TEST_RESULT=1
+    TRAVIS_TEST_RESULT=1
   fi
 else
   echo "Integration test skipped"
