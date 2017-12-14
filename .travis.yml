@@ -10,7 +10,7 @@ deploy:
   provider: heroku
   api_key:
     secure: R7VAHxuMRybOthGai+yIfHkxG/ABcSmUvDTBn+iU16I+PSSwVHNxXQk6fiY1ehhX5VolqkChf7EnrS2cbsToF6+tHy6i7BkyrF3y1V7nzkObxVD+IKNxWOz6zIWVKSvjlhMPWjbZnHNad3ZUHjD+D+G/wQMvsgfb4XQW0lC9gM/k429TXQwDwfJ2c6ay+Lj0qVYt3Nl2orPXWI+yzqPCytRZmNZzqX0OdsJe0T1thz/1KBypsV8ZXvz2C8YJpHhTvjCmUTyB9SGmT4M2600ICcMYcdZKLKnCJ7jc+58oOeHqzQGH6QHrXCuEGbdxXPgzl/HtIDaXH3Y/PofCdO406Oxa2CUur5wuOVB/V6qgw+fGf2TG+ogwIyy1VoxfHzcTVK7sYYur0dgmU1tWvGG8F903BUNwt0ZegsjUsKondQRom/8OETSmRGd2A24/FfeetFfWJRBzv16vRKkWorpJqEbFQUEz0ucvXmCh0pVvOrEGltbzszgjZt4EwB0bvIi2VbSJnVAlfM1LuutZopJSoP6xr3DsGM2WYhrY4tyLEBiivbnQvW9P888zTUpxZEZZAJ/6HtnS4WC5uzwjREyHfmjGXo+rXrV/oZZuWnbYYkp7fd0nJTJxLVYb4Xehj0dm7jb2+9s0gm43AOgxDzRWhnsl7fEesuoJKeHBn3rBNeI=
-  app: video-poster-utility-travis
+  app: get-video-poster-travis
   on:
     repo: carlos-dendarys/video-poster-utility-travis
     branch: staging
