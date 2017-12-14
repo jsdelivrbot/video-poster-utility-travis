@@ -15,4 +15,4 @@ deploy:
     repo: carlos-dendarys/video-poster-utility-travis
     branch: master
 after_success:
-  - yarn run test-integration
+  - ./script-utils/deploy.sh
