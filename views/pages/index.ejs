@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get Video Poster Image</title>
+	<style>
+		.loading-spinner {
+			width:200px;
+			align-content: center;
+		}
+
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+
+<body>
+<section class="jumbotron text-center">
+	<div class="container">
+		<label> #### TEST 7 #### </label>
+		<h2>MP4 file URL:</h2>
+		<label> </label>
+		<input id="mp4UrlFle" type="text" class="form-control">
+		<BR>
+		<input id="createPosterImage" type="button" value="Generate"
+			   class="btn btn-primary" onclick="generatePosterImage()">
+	</div>
+</section>
+
+<div class="jumbotron">
+	<div id="loaderContainer" class="text-center" style="display: none">
+		<img src="/loader.svg" class="loading-spinner">
+	</div>
+
+	<div id="thumbs" class="text-left" style="display:none;"></div>
+</div>
+
+
+
+<script type="text/javascript">
+
+	function showPage() {
+		document.getElementById("loaderContainer").style.display = "none";
+		document.getElementById("thumbs").style.display = "block";
+	}
+
+	function generatePosterImage() {
+
+
+      var videoUrl = document.getElementById("mp4UrlFle").value;
+
+      if(!videoUrl && videoUrl === ''){
+        alert("Could you please provide a valid url.");
+        return;
+	  }
+
+      document.getElementById("thumbs").style.display = "none";
+	  document.getElementById("loaderContainer").style.display = "";
+      document.getElementById("createPosterImage").disabled = true;
+      document.getElementById("thumbs").innerHTML = '';
+
+	  var i = 0;
+	  var video = document.createElement("video");
+	  var thumbs = document.getElementById("thumbs");
+
+	  video.addEventListener('loadeddata', function() {
+		thumbs.innerHTML = "";
+		video.currentTime = i;
+	  }, false);
+
+	  video.addEventListener('seeked', function() {
+		// now video has seeked and current frames will show
+		// at the time as we expect
+		generateThumbnail(i);
+
+		// when frame is captured, increase
+		i++;
+
+		// if we are not passed end, seek to next interval
+		if (i <= video.duration) {
+		  // this will trigger another seeked event
+		  video.currentTime = i/10;
+		} else {
+		  debugger;
+          showPage();
+		  // DONE!, next action
+		  //alert("Process completed")
+          document.getElementById("createPosterImage").disabled = false;
+		}
+
+	  }, false);
+
+	  video.preload = "auto";
+
+      video.src = videoUrl;
+
+	  function generateThumbnail(imageNumber) {
+		var canvas = document.createElement("canvas");
+        canvas.classList.add("card");
+		var canvasTx = canvas.getContext("2d");
+		canvas.width = 1280;
+		canvas.height = 694;
+		canvasTx.drawImage(video, 0, 0, 1280, 694);
+		thumbs.appendChild(canvas);
+	  }
+	}
+</script>
+</body>
+</html>

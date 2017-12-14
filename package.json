@@ -1,0 +1,36 @@
+{
+  "name": "get-video-poster",
+  "version": "0.2.6",
+  "description": "This application is used in order to get image from a video.",
+  "engines": {
+    "node": "6.11.2"
+  },
+  "main": "index.js",
+  "jest": {
+    "verbose": true
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest",
+    "test-integration": "node test-utils/run_ghostinspector_test.js"
+  },
+  "dependencies": {
+    "ejs": "2.5.6",
+    "express": "4.15.2"
+  },
+  "devDependencies": {
+    "jest": "^21.2.1",
+    "request": "^2.81.0",
+    "tape": "^4.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-js-getting-started"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
