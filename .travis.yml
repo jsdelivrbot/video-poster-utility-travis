@@ -7,10 +7,12 @@ install:
 script:
 - yarn run test
 deploy:
-  skip_cleanup: true
   provider: heroku
   api_key:
-    secure: "Ya7QujwiWiL5K6tm61tY8hCPb7wmLPDH7SCoxgETOh32/XriV6yx2z4eHp2Iv1AGZO1fpuRgIk1UxSKFqhvHamukHUKBiln2Qquqb4cu/+G9QT2pIoSmof9UlKPWFDZsqvOeBUki1P942FraFWw06CWPUySocpXmVuNzOT0dfZfZy5X2KxvVs5neFmOEivfiCIGYTQE+4xJgEIHrB7jq8GpV/nCGmeeXBLQNFTrGfGLIuGlp3Qwi7pL5vc0Km7TRgR/NfC06ouyosP/NE4G+L6V48MaVj2ww7KWk+zm20BywvEf7x2gZP6XEa2xjIU20NJ10m8fuFDACxKVQKJ5Nuikpp1tMw24CxdXZpvs8LfwdWZFSwgu362InArG1VdKqq4x8bKdTjHn9zSGoHqYMGalB9eZymukFtARkf193UXJpK4HG/9CiLgYJxq/8G86lVx70tsfa62tHQE9DY0nG/JPrmJBNTIBxbDpBqGn1C4icapEvt6ybM3U8Y7fIq5E/6Oe3gCsdplJ4y6zzmc4q5ZhrsvJJRUb4gCJsgct2XkezEr7xaKWF8OUsb62gQQVhGtbwLq3UEyfq3rG1XRdFD08ykaUNDD5VQJo15/kLABBiEYdj/T6A3Jp+UzRXeB1hOViRNiGA+H+wt8Qs5cIR8LOBdYqV6KcbCk4amHRE3dg="
-    on:
-        branch: master
-
+    secure: R7VAHxuMRybOthGai+yIfHkxG/ABcSmUvDTBn+iU16I+PSSwVHNxXQk6fiY1ehhX5VolqkChf7EnrS2cbsToF6+tHy6i7BkyrF3y1V7nzkObxVD+IKNxWOz6zIWVKSvjlhMPWjbZnHNad3ZUHjD+D+G/wQMvsgfb4XQW0lC9gM/k429TXQwDwfJ2c6ay+Lj0qVYt3Nl2orPXWI+yzqPCytRZmNZzqX0OdsJe0T1thz/1KBypsV8ZXvz2C8YJpHhTvjCmUTyB9SGmT4M2600ICcMYcdZKLKnCJ7jc+58oOeHqzQGH6QHrXCuEGbdxXPgzl/HtIDaXH3Y/PofCdO406Oxa2CUur5wuOVB/V6qgw+fGf2TG+ogwIyy1VoxfHzcTVK7sYYur0dgmU1tWvGG8F903BUNwt0ZegsjUsKondQRom/8OETSmRGd2A24/FfeetFfWJRBzv16vRKkWorpJqEbFQUEz0ucvXmCh0pVvOrEGltbzszgjZt4EwB0bvIi2VbSJnVAlfM1LuutZopJSoP6xr3DsGM2WYhrY4tyLEBiivbnQvW9P888zTUpxZEZZAJ/6HtnS4WC5uzwjREyHfmjGXo+rXrV/oZZuWnbYYkp7fd0nJTJxLVYb4Xehj0dm7jb2+9s0gm43AOgxDzRWhnsl7fEesuoJKeHBn3rBNeI=
+  app: get-video-poster-travis
+  on:
+    repo: carlos-dendarys/video-poster-utility-travis
+    branch: master
+  script:
+    - yarn run test-integration
