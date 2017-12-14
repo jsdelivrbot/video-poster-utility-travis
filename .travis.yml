@@ -21,5 +21,4 @@ deploy:
     branch: master
 
 after_deploy:
-  - COMPILE_RESULT=0 ; ./script-utils/deploy.sh || COMPILE_RESULT=$?; expr $COMPILE_RESULT != 0
-  - [ $COMPILE_RESULT -ge 2 ] && echo makefile error
+  - ./script-utils/deploy.sh
