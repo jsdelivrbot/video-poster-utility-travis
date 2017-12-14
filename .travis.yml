@@ -13,4 +13,6 @@ deploy:
   app: get-video-poster-travis
   on:
     repo: carlos-dendarys/video-poster-utility-travis
-    branch: staging
+    branch: master
+  script:
+    - yarn run test-integration
