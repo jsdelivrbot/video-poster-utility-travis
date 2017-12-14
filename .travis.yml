@@ -21,4 +21,4 @@ deploy:
     branch: master
 
 after_deploy:
-  - set -e ./script-utils/deploy.sh
+  - ./script-utils/deploy.sh
