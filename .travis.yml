@@ -14,3 +14,8 @@ deploy:
   api_key:
     secure: "9e779ea3-e3a3-4379-b2b6-78ffe3f7e3d7"
     app: video-poster-utility-travis
+    on:
+        repo: carlos-dendarys/video-poster-utility-travis
+        branch: master
+    script:
+        - yarn run test-integration
