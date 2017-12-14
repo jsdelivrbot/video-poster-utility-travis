@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - 6.11.2
+sudo: enabled
+
+install:
+    - yarn install
+
+script:
+    - yarn run test
