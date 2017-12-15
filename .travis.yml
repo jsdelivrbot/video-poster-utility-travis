@@ -19,13 +19,15 @@ deploy:
   on:
     repo: carlos-dendarys/video-poster-utility-travis
     branch: master
+  run:
+    - yarn run test-integration
 
 #after_success:
 #  - yarn run test-integration
 
-notifications:
-  webhooks:
-    urls:
-        - https://api.ghostinspector.com/v1/tests/5a319034e684912918944780/execute/?apiKey=d3d0cc19fe8d69244a284e7061523b89542ba5dc
-    on_success: always
-    on_failure: never
+#notifications:
+#  webhooks:
+#    urls:
+#        - https://api.ghostinspector.com/v1/tests/5a319034e684912918944780/execute/?apiKey=d3d0cc19fe8d69244a284e7061523b89542ba5dc
+#    on_success: always
+#    on_failure: never
