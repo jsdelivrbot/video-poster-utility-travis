@@ -20,5 +20,5 @@ deploy:
     repo: carlos-dendarys/video-poster-utility-travis
     branch: master
 
-after_deploy:
+after_success:
   - yarn run test-integration
