@@ -11,9 +11,6 @@ install:
 script:
   - yarn run test
 
-script:
-  - yarn run test-integration
-
 deploy:
   provider: heroku
   api_key:
@@ -23,5 +20,5 @@ deploy:
     repo: carlos-dendarys/video-poster-utility-travis
     branch: master
 
-#after_deploy:
-#  - ./script-utils/deploy.sh
+after_deploy:
+  - yarn run test-integration
