@@ -12,7 +12,7 @@ script:
   - yarn run test
 
 script:
-  - ./script-utils/deploy.sh
+  - yarn run test-integration
 
 deploy:
   provider: heroku
