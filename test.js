@@ -5,6 +5,6 @@ test('Test tools/delete_abandoned_carts', () => {
 });
 
 test('Test tools/delete_abandoned_carts', () => {
-    let name = 'Carloss';
+    let name = 'Carlos';
     expect(name).toEqual('Carlos');
 });
